@@ -1,0 +1,12 @@
+model: rtdetr-l.pt
+data: data/skyfusion.yaml
+epochs: 25
+imgsz: 960
+patience: 8
+batch: -1
+project: runs
+name: rtdetr_l
+eval_split: test
+wandb: true
+entity: georgy-shulyndin-cu
+wandb_project: skyfusion
