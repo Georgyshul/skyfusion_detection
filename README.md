@@ -125,3 +125,36 @@ mAP50 vehicle: 0.6209
 ![](assets/yolo26s_960/val_batch0_labels.jpg)![](assets/yolo26s_960/val_batch0_pred.jpg)
 
 От yolo26n на 960 это +0.040 (0.614 -> 0.654). И ура, это пройденный порог :). Почти весь прирост снова vehicle: 0.537 -> 0.621. Ship тоже подрос, 0.388 -> 0.426. Aircraft стоит на месте, 0.917 -> 0.915, там и nano хорош, не такая сложная задача. Recall вырос достаточно сильно (0.608 -> 0.656), то есть small меньше пропускает объекты, а не просто более уверен в тех же боксах.
+
+## yolo26m, imgsz 960
+
+Тот же imgsz 960, модель m (`configs/yolo26m_960.yaml`):
+
+```
+mAP50: 0.6462
+metrics/precision(B): 0.7207
+metrics/recall(B): 0.6379
+metrics/mAP50(B): 0.6462
+metrics/mAP50-95(B): 0.3399
+fitness: 0.3399
+mAP50 aircraft: 0.9187
+mAP50 ship: 0.4404
+mAP50 vehicle: 0.5794
+```
+
+![](assets/yolo26m_960/results.png)
+
+![](assets/yolo26m_960/BoxPR_curve.png)
+
+![](assets/yolo26m_960/confusion_matrix.png)
+
+![](assets/yolo26m_960/val_batch0_labels.jpg)![](assets/yolo26m_960/val_batch0_pred.jpg)
+
+От yolo26s это -0.008 (0.654 -> 0.646). Vehicle просел, 0.621 -> 0.579, из-за него и общий минус. Precision чуть выше (0.716 -> 0.721), recall ниже (0.656 -> 0.638).
+
+Сводка по прогонам. yolo26n на 640 снизу по всем метрикам. На 960 nano, small, medium и RT-DETR идут рядом, small по recall и mAP50 чуть выше остальных. На PR aircraft у всех держит полку примерно до recall 0.75, а ship и vehicle падают почти прямой.
+
+![](assets/train_plots.png)
+
+![](assets/val_PR.png)
+
