@@ -1,0 +1,9 @@
+mAP50: 0.5532
+metrics/precision(B): 0.6549
+metrics/recall(B): 0.5785
+metrics/mAP50(B): 0.5532
+metrics/mAP50-95(B): 0.2952
+fitness: 0.2952
+mAP50 aircraft: 0.9091
+mAP50 ship: 0.3573
+mAP50 vehicle: 0.3931
