@@ -1,0 +1,11 @@
+model: yolo26s.pt
+data: data/skyfusion.yaml
+epochs: 100
+imgsz: 960
+patience: 15
+project: runs
+name: yolo26s_960
+eval_split: test
+wandb: true
+entity: georgy-shulyndin-cu
+wandb_project: skyfusion
